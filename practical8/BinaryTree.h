@@ -322,9 +322,16 @@ BinNode<T>* BinaryTree<T>::remove(const T & e, BinNode<T>* n) {
 // PostCondition: return true if element 'e' is found in tree whose root is 'n', false otherwise
 template <class T>
 bool BinaryTree<T>::find(const T & e, BinNode<T>* n) const {
-	
-	// COMPLETE THIS FUNCTION
 
+	while (n != NULL) {
+		if (e == n->data) {
+			return true;
+		} else if (e < n->data) {
+			n = n->left;
+		} else {
+			n = n->right;
+		}
+	}
 	return false;
 }
 
